@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import ProtectedRouter from './components/Helper/ProtectedRouter';
 import Home from './components/Home';
 import Login from './components/Login/Login';
 import User from './components/User/User';
@@ -18,7 +19,10 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='login/*' element={<Login />} />
-            <Route path='conta/*' element={<User />} />
+            <Route path='conta/*' element={<ProtectedRouter>
+              <User />
+            </ProtectedRouter>
+            } />
           </Routes>
           <Footer />
         </UserStorage>
