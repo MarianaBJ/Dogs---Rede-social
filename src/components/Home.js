@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './Home.module.scss';
-
+import Feed from './Feed/Feed';
 
 export default function Home() {
     return (
-        <div className={styles.home}>Home</div>
+        <section className='container mainContainer'>
+            <Feed />
+        </section>
     )
 }
