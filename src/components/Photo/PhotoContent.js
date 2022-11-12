@@ -5,7 +5,7 @@ import styles from './PhotoContent.module.scss';
 
 export default function PhotoContent({ data }) {
     const { photo, comments } = data;
-    console.log(data, 'data')
+
     return (
         <div className={styles.photo}>
             <div className={styles.img}>
