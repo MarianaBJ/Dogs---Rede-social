@@ -17,6 +17,7 @@ export const UserStorage = ({ children }) => {
             setError(null);
             setLoading(false);
             setLogin(false);
+            window.localStorage.removeItem('user');
             window.localStorage.removeItem('token');
             navigate('/login');
         },
@@ -27,6 +28,7 @@ export const UserStorage = ({ children }) => {
         const { url, options } = USER_GET(token);
         const response = await fetch(url, options);
         const json = await response.json();
+        window.localStorage.setItem('user', json);
         setData(json);
         setLogin(true);
     }

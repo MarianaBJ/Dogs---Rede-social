@@ -12,7 +12,7 @@ export default function useFetch() {
         let json;
         try {
             setError(null);
-            setLoading(null);
+            setLoading(true);
 
             response = await fetch(url, options);
             json = await response.json();

@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom';
 import { UserContext } from '../../UserContext'
 
-export default function ProtectedRouter({ children }) {
+const ProtectedRouter = ({ children }) => {
 
     const { login } = useContext(UserContext);
+    const userLogin = window.localStorage.getItem('user');
 
-    return login ? children : <Navigate to='/login' />
+    return ((login && userLogin) || (!login && userLogin)) ? children : <Navigate to='/login' />
 }
+export default ProtectedRouter;
