@@ -6,7 +6,7 @@ import Error from '../Helper/Error';
 import styles from './PhotoCommentsForm.module.scss';
 
 
-export default function PhotoCommentsForm({ id, setComments }) {
+export default function PhotoCommentsForm({ id, setComments, single }) {
 
     const [comment, setComment] = useState('');
     const { request, error } = useFetch();
@@ -21,7 +21,7 @@ export default function PhotoCommentsForm({ id, setComments }) {
         }
     }
     return (
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={`${styles.form} ${single ? styles.single : ''}`}>
             <textarea value={comment}
                 id='comment'
                 name='comment'
