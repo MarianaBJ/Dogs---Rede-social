@@ -1,7 +1,10 @@
 import React from 'react'
+import Head from '../Helper/Head'
 
 export default function UserStats() {
     return (
-        <div>UserStats</div>
+        <div>
+            <Head title='Estatísticas' />
+            UserStats</div>
     )
 }

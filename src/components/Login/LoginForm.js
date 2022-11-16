@@ -8,6 +8,7 @@ import { UserContext } from '../../UserContext';
 import Error from '../Helper/Error';
 import styles from './LoginForm.module.scss';
 import stylesBtn from '../Forms/Button.module.scss';
+import Head from '../Helper/Head';
 
 export default function LoginForm() {
 
@@ -28,6 +29,7 @@ export default function LoginForm() {
 
     return (
         <section className='animeLeft'>
+            <Head title='Login' />
             <h1 className='title'>Login</h1>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <Input label='Usuário' type='text' name='username' {...username} />

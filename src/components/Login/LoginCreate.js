@@ -6,6 +6,7 @@ import useForm from '../../Hooks/useForm';
 import { USER_POST } from '../../api';
 import useFetch from '../../Hooks/useFetch';
 import { UserContext } from '../../UserContext';
+import Head from '../Helper/Head';
 
 export default function LoginCreate() {
 
@@ -29,6 +30,7 @@ export default function LoginCreate() {
 
     return (
         <section>
+            <Head title='Crie sua conta' />
             <h1 className='title'>Cadastre-se</h1>
             <form onSubmit={handleSubmit}>
                 <Input label='Usuário' type='text' name='username' {...username} />
