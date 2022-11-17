@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Home.module.scss';
 import Feed from './Feed/Feed';
 import Head from './Helper/Head';
 

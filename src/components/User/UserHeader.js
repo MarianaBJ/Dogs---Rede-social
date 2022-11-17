@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import UserHeaderNav from './UserHeaderNav';
 import styles from './UserHeader.module.scss';
-import { useLocation, useMatch } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export default function UserHeader() {
 
