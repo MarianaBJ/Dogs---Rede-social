@@ -10,18 +10,21 @@ import Head from '../Helper/Head';
 
 export default function User() {
 
-    const { data } = useContext(UserContext);
+    let data = localStorage.getItem('user');
+    data = JSON.parse(data)
 
-    return (
-        <section className='container'>
-            <Head title='Minha conta' />
-            <UserHeader />
-            <Routes>
-                <Route path='/' element={<Feed user={data.id} />} />
-                <Route path='postar' element={<UserPhotoPost />} />
-                <Route path='estatisticas' element={<UserStats />} />
-                <Route path='*' element={<NotFound />} />
-            </Routes>
-        </section>
-    )
+    if (!data) return null;
+    if (data)
+        return (
+            <section className='container'>
+                <Head title='Minha conta' />
+                <UserHeader />
+                <Routes>
+                    <Route path='/' element={<Feed user={data.id} />} />
+                    <Route path='postar' element={<UserPhotoPost />} />
+                    <Route path='estatisticas' element={<UserStats />} />
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
+            </section>
+        )
 }

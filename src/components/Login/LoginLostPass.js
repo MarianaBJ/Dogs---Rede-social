@@ -25,7 +25,7 @@ export default function LoginLostPass() {
     }
 
     return (
-        <section>
+        <section className='animeLeft'>
             <Head title='Perdeu a senha' />
             <h1 className='title'>Perdeu a senha?</h1>
             {

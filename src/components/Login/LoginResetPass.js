@@ -45,7 +45,7 @@ export default function LoginResetPass() {
 
 
     return (
-        <div>
+        <section className='animeLeft'>
             <Head title='Resete a senha' />
             <h1>Resete sua senha</h1>
             <form onSubmit={handleSubmit}>
@@ -53,6 +53,6 @@ export default function LoginResetPass() {
                 {loading ? <Button disabled>Resetando...</Button> : <Button>Resetar</Button>}
             </form>
             <Error error={error} />
-        </div>
+        </section>
     )
 }
